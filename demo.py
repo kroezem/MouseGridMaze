@@ -32,4 +32,7 @@ if __name__ == '__main__':
 
         if terminated or truncated:
             obs, _ = env.reset()
-            model = PPO.load(latest(), env)
+
+            model_zip = latest()
+            print(f'\n******** Loading - {model_zip} ********\n')
+            model = PPO.load(model_zip, env)
